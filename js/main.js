@@ -5,7 +5,7 @@ function hoverEffect() {
     const cells = document.querySelectorAll('.cell');
     cells.forEach((cell) => {
         cell.addEventListener('mouseenter', () => {
-            cell.style.backgroundColor = 'black';
+            cell.style.backgroundColor = generateColor();
         });
     });
 }
@@ -49,4 +49,15 @@ button.addEventListener('click', () => {
 
 });
 
+function colorStrength() {
+    return (Math.floor(Math.random() * 255) + 1);
+}
+
+
+function generateColor() {
+    const red = colorStrength();
+    const green = colorStrength();
+    const blue = colorStrength();
+    return (`rgb(${red},${green},${blue})`);
+}
 
