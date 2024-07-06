@@ -30,7 +30,7 @@ button:hover {
 .container {
     border: 1px solid black;
     background: #DCA47C;
-    min-height: 100vh;
+    min-height: 95vh;
     max-width: 960px;
     margin: 0 auto;
     display: flex;
