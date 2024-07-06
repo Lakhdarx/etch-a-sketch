@@ -31,7 +31,7 @@ button:hover {
     border: 1px solid black;
     background: #DCA47C;
     min-height: 100vh;
-    max-width: 900px;
+    max-width: 960px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -48,8 +48,4 @@ button:hover {
 .cell {
     border: 1px solid black;
     flex: 1;
-}
-
-.cell:hover {
-    background: #698474;
 }
