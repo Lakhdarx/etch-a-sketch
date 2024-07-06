@@ -28,7 +28,7 @@ button:hover {
 
 
 .container {
-    border: 1px solid black;
+    border: 15px solid black;
     background: #DCA47C;
     min-height: 95vh;
     max-width: 960px;
@@ -46,6 +46,5 @@ button:hover {
 }
 
 .cell {
-    /* border: 1px solid black; */
     flex: 1;
 }
