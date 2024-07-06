@@ -6,7 +6,8 @@ function hoverEffect() {
     cells.forEach((cell) => {
         cell.addEventListener('mouseenter', () => {
             cell.style.backgroundColor = generateColor();
-            cell.style.opacity -= '0.1';
+            let currentOpacity = Number(cell.style.opacity);
+            if (currentOpacity < 1) cell.style.opacity = (currentOpacity + 0.1).toString()
         });
     });
 }
@@ -19,7 +20,7 @@ for (let i = 0; i < 16; i++) {
     for (let j = 0; j < 16; j++) {
         const cell = document.createElement('div');
         cell.setAttribute('class','cell');
-        cell.setAttribute('style','opacity: 1;');
+        cell.setAttribute('style','opacity: 0.2;');
         row.appendChild(cell);
     }
 }
@@ -43,7 +44,7 @@ button.addEventListener('click', () => {
         for (let j = 0; j < dimension; j++) {
             const cell = document.createElement('div');
             cell.setAttribute('class','cell');
-            cell.setAttribute('style','opacity: 1');
+            cell.setAttribute('style','opacity: 0.2');
             row.appendChild(cell);
         }
     }

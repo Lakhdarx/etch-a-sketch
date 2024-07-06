@@ -1,6 +1,10 @@
 body {
     background-color: #F7E7DC;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h2 {
+    text-align: center;
 }
 
 button {
