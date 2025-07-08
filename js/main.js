@@ -13,22 +13,26 @@ function hoverEffect() {
 }
 
 
-for (let i = 0; i < 16; i++) {
-    const row = document.createElement('div');
-    row.setAttribute('class', 'row');
-    container.appendChild(row);
-    for (let j = 0; j < 16; j++) {
-        const cell = document.createElement('div');
-        cell.setAttribute('class','cell');
-        cell.setAttribute('style','opacity: 0.2;');
-        row.appendChild(cell);
+function addCells(dimension) {
+    for (let i = 0; i < dimension; i++) {
+        const row = document.createElement('div');
+        row.setAttribute('class', 'row');
+        container.appendChild(row);
+        for (let j = 0; j < dimension; j++) {
+            const cell = document.createElement('div');
+            cell.setAttribute('class','cell');
+            cell.setAttribute('style','opacity: 0.2;');
+            row.appendChild(cell);
+        }
     }
 }
+
+addCells(16);
 hoverEffect();
 
 button.addEventListener('click', () => {
     dimension = Number(prompt('Enter the dimensions of the grid (Less than 100X100)'));
-    if (isNaN(dimension) || dimension > 100) {
+    if (isNaN(dimension) || dimension > 100 || dimension <= 0) {   // Pressing cancel returns null, and we know (null <= 0) is true
         alert('Invalid Input');
         return;
     }
@@ -37,17 +41,7 @@ button.addEventListener('click', () => {
         container.removeChild(container.lastElementChild);
     }
 
-    for (let i = 0; i < dimension; i++) {
-        const row = document.createElement('div');
-        row.setAttribute('class', 'row');
-        container.appendChild(row);
-        for (let j = 0; j < dimension; j++) {
-            const cell = document.createElement('div');
-            cell.setAttribute('class','cell');
-            cell.setAttribute('style','opacity: 0.2');
-            row.appendChild(cell);
-        }
-    }
+    addCells(dimension);
 
     hoverEffect();
 
